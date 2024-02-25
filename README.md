@@ -22,6 +22,18 @@ check if certain function contains something?
 
 2. use `call_verify` to test each function in the function file
 ```
+@weight(0.08)
+@visibility("visible")
+def test_get_average_invalid_drop_lowest2(self):
+    '''gradebook: Test get_average with invalid drop_lowest'''
+    numbers = [1, 2, 3, 4, 5]
+    drop_lowest = -1
+    expected = 3.0
+    self.call_verify(expected, 'get_average', numbers, drop_lowest)
+```
+just call call_verify directly.
+if we want to display customized message to students, then we need to write test code in a different way.
+```
 def call_verify(self, expected, function_name, *args, **kwargs):
     """
     This function is a helper function for the test cases. 
