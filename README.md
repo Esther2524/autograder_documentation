@@ -8,7 +8,11 @@ This command is used to create a new branch named esther-hw6 and immediately swi
 
 4. `git push origin esther-hw6`
 This command pushes the commits from your local branch esther-hw6 to the remote repository. If the branch doesn't exist on the remote, it will be created. However, without -u, your local branch will not set up a tracking relationship with the remote branch. This means that in the future, you'll have to specify the remote and branch names explicitly when pushing or pulling.
-5. 
+5. `git branch`
+This command will display a list of all local branches. The branch you're currently on will be highlighted and marked with an asterisk (*).
+
+6. `git branch -D branch_name`
+
 ## Test Environment
 `source venv/bin/activate`
 
