@@ -20,7 +20,7 @@ we can use this to check uncommitted or unupdated changes
 ## Test Environment
 `source venv/bin/activate`
 
-## Test functions
+## Test Function File
 1. AST 
 check if certain function contains something?
 
@@ -98,5 +98,37 @@ def test_get_neighbourhood_with_most_parks_returns_list(self):
     self.assertEqual(result, expected_result, f"The return type of function get_neighbourhood_with_most_parks() is correct (list), but the elements inside the list are not as expected. Expected {expected_result} but got {result}. \
 Ensure your function correctly identifies the neighbourhood(s) with the most parks.")
 ```
-3. check if a certain function is called/not called in main
-   
+## Test the Driver File
+1. checks the existence of display_neighbourhood_with_most_parks but also displays a descriptive message if the function does not exist
+```
+# Test display_neighbourhood_with_most_parks exists
+@weight(0)
+@visibility("visible")
+def test_display_neighbourhood_with_most_parks_exist(self):
+    """parks_driver: Test that display_neighbourhood_with_most_parks exists"""
+    # Attempt to import the expected module
+    exec(f"import {self.expected_module}")
+    # Check if the function exists in the imported module
+    function_exists = hasattr(eval(f"{self.expected_module}"), 'display_neighbourhood_with_most_parks')
+    # Assert that the function exists, with a custom message if it does not
+    self.assertTrue(function_exists, f"The function 'display_neighbourhood_with_most_parks' does not exist in the {self.expected_module} file. \
+Please ensure you have implemented this function as required.")
+```
+2. check if a certain function is called/not called in `main`
+```
+# check if the display_neighbourhood_with_most_parks function is called at least once anywhere in the entire driver file
+@weight(0)
+@visibility("visible")
+def test_parks_driver_calls_display_function(self):
+    """parks_driver: Check that main calls display_neighbourhood_with_most_parks"""
+    # read file into a string
+    with open(self.expected_filename[0], 'r') as f:
+        code = f.read()
+    pedal.contextualize_report(code)
+    pedal.ensure_function_call('display_neighbourhood_with_most_parks', 1)  # 1 indicates the minimum number of expected calls
+    res = pedal.resolvers.simple.resolve()
+    self.assertTrue(res.success, res.message)   
+```
+
+4. test the output of the entire program (not just one function)
+5. test if they use `if __name__ == "__main__"`
