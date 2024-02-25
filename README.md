@@ -12,6 +12,10 @@ This command pushes the commits from your local branch esther-hw6 to the remote 
 This command will display a list of all local branches. The branch you're currently on will be highlighted and marked with an asterisk (*).
 
 6. `git branch -D branch_name`
+delete a local branch
+
+7. `git checkout esther-hw6`
+we can use this to check uncommitted or unupdated changes
 
 ## Test Environment
 `source venv/bin/activate`
@@ -20,7 +24,7 @@ This command will display a list of all local branches. The branch you're curren
 1. AST 
 check if certain function contains something?
 
-2. use `call_verify` to test each function in the function file
+2. use `call_verify` to test each function (mainly the output of the function)
 ```
 @weight(0.08)
 @visibility("visible")
@@ -94,4 +98,5 @@ def test_get_neighbourhood_with_most_parks_returns_list(self):
     self.assertEqual(result, expected_result, f"The return type of function get_neighbourhood_with_most_parks() is correct (list), but the elements inside the list are not as expected. Expected {expected_result} but got {result}. \
 Ensure your function correctly identifies the neighbourhood(s) with the most parks.")
 ```
-3. 
+3. check if a certain function is called/not called in main
+   
