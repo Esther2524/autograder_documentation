@@ -19,3 +19,22 @@ This command will display a list of all local branches. The branch you're curren
 ## Test functions
 1. AST 
 check if certain function contains something?
+
+2. use `call_verify` to test each function in the function file
+```
+def call_verify(self, expected, function_name, *args, **kwargs):
+    """
+    This function is a helper function for the test cases. 
+    It calls the verify function and then compares the actual and expected values.
+    """
+    passed, actual, msg = verify(
+        self.expected_module, function_name, expected, *args, **kwargs)
+
+    # if verify returns False, then the test failed
+    if not passed:
+        self.fail(msg)
+
+    # otherwise, compare the actual and expected values
+    self.assertEqual(actual, expected, msg)
+```
+3. 
