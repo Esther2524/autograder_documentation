@@ -132,3 +132,42 @@ def test_parks_driver_calls_display_function(self):
 
 4. test the output of the entire program (not just one function)
 5. test if they use `if __name__ == "__main__"`
+
+## Static Code
+1. check import statements
+* check `import sys`
+```
+@weight(0)
+@visibility("visible")
+def test_imports_exist_funtions(self):
+    """parks_cli: Check that parks_cli imports sys"""
+    with open(self.expected_filename[0], 'r') as f:
+        code = f.read()
+    pedal.contextualize_report(code)
+    pedal.ensure_import('sys')
+    res = pedal.resolvers.simple.resolve()
+    self.assertTrue(res.success, res.message)
+```
+* check `from function_file import function1`, only import one function or stuff
+```
+# Ensure that the driver file specifically imports only run_menu from menu_functions and no other functions
+@weight(0.2)
+@visibility("visible")
+def test_specific_import_run_menu(self):
+    """menu_driver: Check that only 'run_menu' is imported from 'menu_functions'"""
+    with open(self.expected_filename[0], 'r') as f:
+        code = f.read()
+    # parses the driver file using ast.parse
+    ast_tree = ast.parse(code)
+    found_import = False
+    for node in ast.walk(ast_tree):
+        # Inspect the ast.ImportFrom nodes to check if menu_functions is the module being imported from and run_menu is the only name being imported.
+        if isinstance(node, ast.ImportFrom):
+            if node.module == 'menu_functions':
+                imported_names = [alias.name for alias in node.names]
+                if 'run_menu' in imported_names and len(imported_names) == 1:
+                    found_import = True
+                    break
+    if not found_import:
+        self.fail("The 'run_menu' function should be the only import from 'menu_functions'.")
+```
