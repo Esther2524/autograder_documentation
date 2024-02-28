@@ -39,7 +39,7 @@ before we start the new feature branch, make sure we fetch and update the latest
 ![sample of folder](assets/venv_sample.png)
 
 5. the failure of `AssertionError: Missing required files` is correct when running tests locally. Just ignore it!
-
+![sample of correct failure](assets/correct_failure.png)
 
 
 ## Test Function File
