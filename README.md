@@ -31,10 +31,10 @@ before we start the new feature branch, make sure we fetch and update the latest
 
 ## Test Environment
 ### Steps to Run Locally
-1. set up the venv: `python3 -m venv/venv` (in the current hw folder, and in the same level as the `tests/` folder)
-2. activate: `source venv/bin/activate`
-3. install all dependencies: `pip install -r requirements.txt`
-4. run the test on that path: `python3 -m unittest test_dog_days.py` (We need to cd `tests/` folder to run these test files)
+**1. set up the venv:** `python3 -m venv/venv` (in the current hw folder, and in the same level as the `tests/` folder)
+**2. activate:** `source venv/bin/activate`
+**3. install all dependencies:** `pip install -r requirements.txt`
+**4. run the test on that path:** `python3 -m unittest test_dog_days.py` (We need to cd `tests/` folder to run these test files)
 
 ![sample of folder](assets/venv_sample.png)
 
