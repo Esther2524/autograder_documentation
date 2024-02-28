@@ -149,7 +149,7 @@ def test_parks_driver_calls_display_function(self):
 4. test the output of the entire program (not just one function)
 5. test if they use `if __name__ == "__main__"`
 
-## Static Code
+## Static Code Check
 1. check import statements
 * check `import sys`
 ```
