@@ -1,6 +1,6 @@
 # Autograder Documentation
 ## Usage of Git
-Before we start the new feature branch, make sure we fetch and update the latest version of Autograder first.
+Before we start the new HW, make sure we fetch and update the latest version of Autograder first.
 1. `git fetch origin`
 
     This command will update the information about remote branches in our local repository but won't change my current branch or working directory. This step can ensure we have the latest list of branches from the remote repository.
