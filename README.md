@@ -36,6 +36,8 @@ before we start the new feature branch, make sure we fetch and update the latest
 3. install all dependencies: `pip install -r requirements.txt`
 4. run the test on that path: `python3 -m unittest test_dog_days.py` (We need to cd `tests/` folder to run these test files)
 
+[sample of folder](assets/venv_sample.png)
+
 ## Test Function File
 1. AST 
 check if certain function contains something?
