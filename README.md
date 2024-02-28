@@ -3,19 +3,32 @@
 ## Usage of Git
 before we start the new feature branch, make sure we fetch and update the latest version of Autograder first.
 1. `git fetch origin`
-This command will update the information about remote branches in our local repository but won't change my current branch or working directory. This step can ensure we have the latest list of branches from the remote repository.
+
+    This command will update the information about remote branches in our local repository but won't change my current branch or working directory. This step can ensure we have the latest list of branches from the remote repository.
+
 2. `git pull origin main`
-This command will update our local repository with the latest changes from the `main` branch. 
+
+    This command will update our local repository with the latest changes from the `main` branch. 
+
 3. `git checkout -b esther-hw6`
-This command is used to create a new branch named `esther-hw6` and immediately switch to it. The `-b` flag tells Git to create a new branch. If the branch `esther-hw6` does not exist, Git will create it based on the current branch you are on.
+
+    This command is used to create a new branch named `esther-hw6` and immediately switch to it. The `-b` flag tells Git to create a new branch. If the branch `esther-hw6` does not exist, Git will create it based on the current branch you are on.
+
 4. `git push origin esther-hw6`
-This command will push the commits from our local branch `esther-hw6` to the remote repository. If the branch doesn't exist on the remote, it will be created. However, without `-u`, our local branch will not set up a tracking relationship with the remote branch. This means that in the future, we'll have to specify the remote and branch names explicitly when pushing or pulling.
+
+    This command will push the commits from our local branch `esther-hw6` to the remote repository. If the branch doesn't exist on the remote, it will be created. However, without `-u`, our local branch will not set up a tracking relationship with the remote branch. This means that in the future, we'll have to specify the remote and branch names explicitly when pushing or pulling.
+
 5. `git branch`
-This command will display a list of all local branches. The branch we're currently on will be highlighted and marked with an asterisk (*).
+
+    This command will display a list of all local branches. The branch we're currently on will be highlighted and marked with an asterisk (*).
+
 6. `git branch -D branch_name`
-The `-D` option is a **force** operation. It deletes the branch regardless of its merge status. Use this with caution, as it can lead to losing unmerged changes.
+
+    The `-D` option is a **force** operation. It deletes the branch regardless of its merge status. Use this with caution, as it can lead to losing unmerged changes.
+
 7. `git checkout esther-hw6`
-we can use this to check uncommitted or unupdated changes.
+
+    we can use this to check uncommitted or unupdated changes.
 
 ## Test Environment
 `source venv/bin/activate`
