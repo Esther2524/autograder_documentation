@@ -31,7 +31,7 @@ Before we start the new HW, make sure we fetch and update the latest version of 
 
 ## Test Environment
 ### Steps to Run Locally
-**1. set up the venv:** `python3 -m venv/venv` (in the current hw folder, and in the same level as the `tests/` folder)
+**1. set up the venv:** `python3 -m venv venv` (in the current hw folder, and in the same level as the `tests/` folder)
 
 **2. activate:** `source venv/bin/activate`
 
