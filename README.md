@@ -1,6 +1,6 @@
 # Autograder Documentation
 ## Usage of Git
-Before we start the new HW, make sure we fetch and update the latest version of Autograder first.
+Before we start a new branch for the HW, make sure we fetch and update the latest version of Autograder first.
 1. `git fetch origin`
 
     This command will update the information about remote branches in our local repository but won't change my current branch or working directory. This step can ensure we have the latest list of branches from the remote repository.
@@ -119,7 +119,6 @@ def test_get_neighbourhood_with_most_parks_returns_list(self):
     # Verify the result is a list
     self.assertIsInstance(result, list, "The return type of function get_neighbourhood_with_most_parks() should be a list.")
     
-    # Verify the result matches the expected output
     # Verify the result matches the expected output
     self.assertEqual(result, expected_result, f"The return type of function get_neighbourhood_with_most_parks() is correct (list), but the elements inside the list are not as expected. Expected {expected_result} but got {result}. \
 Ensure your function correctly identifies the neighbourhood(s) with the most parks.")
