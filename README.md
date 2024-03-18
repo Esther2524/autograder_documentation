@@ -48,7 +48,7 @@ Before we start a new branch for the HW, make sure we fetch and update the lates
 
 ## Test Function File
 1. AST 
-check if certain function contains something?
+
 
 2. use `call_verify` to test each function (mainly the output of the function)
 ```
